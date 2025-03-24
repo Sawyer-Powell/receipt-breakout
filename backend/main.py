@@ -26,6 +26,9 @@ app.add_middleware(
 
 image_dir = "images"
 
+if not os.path.exists(image_dir):
+    os.mkdir(image_dir)
+
 app.mount(f"/{image_dir}", StaticFiles(directory=image_dir), name=image_dir)
 app.mount("/assets", StaticFiles(directory="static/assets"), name="assets")
 
@@ -74,8 +77,8 @@ def veryfi_process_receipt(receipt: db.Receipt):
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "CLIENT-ID": os.environ.get('CLIENT_ID'),
-        "AUTHORIZATION": os.environ.get('AUTHORIZATION'),
+        "CLIENT-ID": os.environ.get("CLIENT_ID"),
+        "AUTHORIZATION": os.environ.get("AUTHORIZATION"),
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -153,6 +156,7 @@ def get_line_items(id: int, session: db.SessionDep):
         out.append(line_item)
 
     return out
+
 
 @app.get("/")
 def index():
