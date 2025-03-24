@@ -15,3 +15,7 @@ AUTHORIZATION="apikey ..."
 ```bash
 docker-compose up
 ```
+3. Play
+
+- Use the arrow keys to move the paddle
+- Find example receipts in the `example_receipts` folder
