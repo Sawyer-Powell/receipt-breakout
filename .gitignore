@@ -1,0 +1,4 @@
+.DS_Store
+backend/images/*
+backend/*.sqlite
+.env

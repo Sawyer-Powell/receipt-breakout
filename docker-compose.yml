@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CLIENT_ID=${CLIENT_ID}
+      - AUTHORIZATION=${AUTHORIZATION}
+    ports:
+      - "8000:80"
+    restart: always

@@ -1,0 +1,6 @@
+# .dockerignore
+node_modules
+.git
+backend/images/*
+backend/*.sqlite
+**/__pycache__
