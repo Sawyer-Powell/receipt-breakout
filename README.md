@@ -19,3 +19,4 @@ docker-compose up
 
 - Use the arrow keys to move the paddle
 - Find example receipts in the `example_receipts` folder
+- Don't let the ball hit the bottom!
